@@ -2,6 +2,10 @@ import Data.Monoid
 import Data.Foldable
 import qualified Data.Map as Map
 
+
+--
+-- First and Last
+-- First :: Maybe a -> First a
 lastOne = (Last $ Just 4) `mappend` (Last $ Just 3)
 -- Last {getLast = Just 3}
 
@@ -11,6 +15,9 @@ withIdElem = (Last $ Just 4) `mappend` (Last $ Just 3) `mappend` (mempty $ Just 
 withFoldable = fold [Last $ Just 3, Last $ Just 4, Last Nothing]
 -- Just 4
 
+
+-- combine with (a -> Maybe b) and First
+--
 robots = Map.fromList [("Lisa", "345")
                       ,("Bob", "234")]
 
